@@ -25,7 +25,7 @@ class App extends Component {
         <ul>
           {this.makeProjectList()}
           <li>
-            <div className={'oval'}>
+            <div className={'oval infoOval'}>
               <div className={'num'}> {'i'} </div>
             </div>
             <div className ={'contactList'}>
