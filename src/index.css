@@ -1,0 +1,50 @@
+@font-face {
+  font-family: 'Nimbus Sans';
+  src:  url('fonts/NimbusSansDOT-BlacExte.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Nimbus Sans';
+  src:  url('fonts/NimbusSansDOT-BoldExte.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Nimbus Sans';
+  src:  url('fonts/NimbusSansDOT-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Nimbus Sans';
+  src:  url('fonts/NimbusSansDOT-Regu.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Nimbus Sans';
+  src:  url('fonts/NimbusSansDOT-ReguItal.otf') format('opentype');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Nimbus Sans';
+  src:  url('fonts/NimbusSanNovOutD-Bla.otf') format('opentype');
+  font-weight: 100;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin:0;
+  padding: 0;
+  background-color: #F2F2F2;
+}
