@@ -1,46 +1,42 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from 'react'
+import Project from './Project'
+import './App.css'
+import metaData from './meta.json'
+import projectData from './projects.json'
 
 class App extends Component {
+  makeProjectList = () => {
+  const projectList = projectData.map((project, index) => {
+    return (
+      <Project project={project} index={index}/>
+    )
+    })
+    return projectList
+  }
+
   render() {
     return (
       <div className="App">
-      <header> <h1>{'gt'}</h1> </header>
+      <header>
+        <h1>{'gt'}</h1>
+
+      </header>
       <main>
         <ul>
+          {this.makeProjectList()}
           <li>
-            <div className={'oval'} />
-            <div className={'num'}> {'01'} </div>
-            <h3>{'Arena TV'}</h3>
-            <img src={'http://printer.generaltrademark.com/printer.jpg'}/>
-            <img src={'http://generaltrademark.com/package4-copy.jpg'}/>
-            <img src={'http://generaltrademark.com/rock.jpg'}/>
-            <img src={'http://printer.generaltrademark.com/printer.jpg'}/>
-            <img src={'http://generaltrademark.com/package4-copy.jpg'}/>
-            <img src={'http://generaltrademark.com/rock.jpg'}/>
-            <img src={'http://printer.generaltrademark.com/printer.jpg'}/>
-            <img src={'http://generaltrademark.com/package4-copy.jpg'}/>
-            <img src={'http://generaltrademark.com/rock.jpg'}/>
-          </li>
-          <li>
-          <div className={'oval'} />
-          <div className={'num'}> {'02'} </div>
-          <h3>{'Printer M―01'}</h3>
-          <img src={'http://appliancecenter.com/wp-content/uploads/2014/04/Washing-Machine-Spare-Parts-2.jpg'}/>
-          <img src={'http://generaltrademark.com/package4-copy.jpg'}/>
-          <img src={'http://generaltrademark.com/rock.jpg'}/>
-          <img src={'http://printer.generaltrademark.com/printer.jpg'}/>
-          </li>
-          <li>
-          <div className={'oval'} />
-
-          <div className={'num'}> {'03'} </div>
-          <h3>{'P―Nodes'}</h3>
-          <img src={'http://pneu.haus/content/1-projects/2-camera-obscura/01.jpg'}/>
-
+            <div className={'oval'}>
+              <div className={'num'}> {'i'} </div>
+            </div>
+            <div className ={'contactList'}>
+              <h4>{metaData.name}</h4>
+              <h4>{metaData.address}</h4>
+              <h4>{metaData.phone}</h4>
+              <h4>{metaData.email}</h4>
+            </div>
           </li>
         </ul>
+
       </main>
       </div>
     );
