@@ -1,8 +1,37 @@
+
 header{
   padding: 0px 20px 0px 40px;
+  height: 0;
   display: flex;
   width: 100%;
-  align-items: center;
+  align-items: flex-end;
+  background-color: #005FB2;
+  color: white;
+  transition: 500ms;
+  overflow: hidden;
+  flex-direction: column-reverse;
+
+}
+
+article{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  position: absolute;
+  top: 40px;
+}
+
+article h1 {
+  transition: 300ms;
+  margin-right: 40px;
+}
+
+article li {
+  margin-bottom: 0;
+  padding: 0;
+  margin-left: 40px;
+  margin-top: 40px;
 }
 
 .contact{
@@ -16,20 +45,19 @@ body{
 
 main {
   padding: 20px;
+  transition: margin 400ms;
 }
 
 h1 {
   font-family: 'Nimbus Sans';
   font-weight: 900;
+  font-size: 200px;
   margin: 0;
   padding: 0;
+  margin-top: -40px;
   -webkit-text-fill-color: transparent; /* Will override color (regardless of order) */
   -webkit-text-stroke-width: 2px;
   -webkit-text-stroke-color: black;
-}
-
-header h1{
-  margin-top: 0px;
 }
 
 h2{
@@ -58,7 +86,7 @@ h4 {
   font-weight: 500;
   margin:0;
   padding:0;
-  font-size: 22px;
+  font-size: 20px;
 }
 
 h6{
@@ -68,6 +96,15 @@ h6{
   margin: 0;
   padding: 0;
   margin-top: -20px;
+}
+
+p{
+  font-family: 'Times New Roman';
+  font-weight: 500;
+  margin:0;
+  padding:0;
+  font-size: 20px;
+  margin-bottom: 20px;
 }
 
 a{
@@ -85,10 +122,12 @@ ul{
   padding: 0;
 }
 
+
 li{
   margin: 0;
   padding: 20px;
   display: flex;
+  flex-wrap: wrap;
   margin-bottom: 30px;
   transition: background-color 200ms;
 }
@@ -100,22 +139,13 @@ li{
   background-color: transparent;
   border: 1px solid black;
   border-radius: 160px / 100px;
-  opacity:1;
-  margin-top: 16px;
-  margin-right: 10px;
+
+  transition: 300ms;
+  transform-origin: bottom;
 }
-
-.infoOval{
-  margin-top: 0;
-
-}
-
 
 li:hover .oval {
-  /*transform: rotateZ(10deg);*/
-}
-
-li:hover{
+  transform: rotateZ(7deg);
 }
 
 .num{
@@ -123,23 +153,27 @@ li:hover{
   font-weight: 800;
   -webkit-text-fill-color: transparent; /* Will override color (regardless of order) */
   -webkit-text-stroke-width: 1.5px;
-  -webkit-text-stroke-color: black;
   margin-right: 20px;
   font-size: 80px;
   width: 160px;
   text-align: center;
   margin-top: 8px;
+  transition: 300ms;
 }
 
-.photoList{
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
+.infoOval{
+  margin-top: 0;
 }
 
-.photoList img{
+.infoOval:hover{
+  cursor: pointer;
+}
+
+li img{
   height: 100px;
-  margin-right: 4px;
+  margin: 14px;
+  transition: 400ms;
+  cursor: pointer;
 }
 
 header img{
@@ -167,7 +201,13 @@ header img{
 }
 
 .title{
-  display: flex;
-  align-items: center;
   word-wrap: break-word;
+  margin-left: 40px;
+}
+
+.info{
+  margin-bottom: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
 }

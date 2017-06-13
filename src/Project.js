@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
-import PhotoList from './PhotoList'
 import './App.css'
 
 class Project extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      hoverColor: 'black'
+      hoverColor: 'black',
+      galleryOpen: false,
     }
   }
 
@@ -22,6 +22,26 @@ class Project extends Component {
     })
   }
 
+  makePhotoList = () => {
+    const photoList = this.props.project.assets.map((asset) => {
+      return (
+        <img
+          key={`photo${this.props.project.key}${asset}`}
+          alt={this.props.project.key}
+          src={`../assets/${this.props.project.key}/${asset}`}
+          onClick={() => this.handleGalleryResize()}
+          style={this.state.galleryOpen ? {height: '300px'} : {height: '100px'}}/>
+      )
+    })
+    return photoList
+  }
+
+  handleGalleryResize = () => {
+    this.setState({
+      galleryOpen: !this.state.galleryOpen,
+    })
+  }
+
   handleComingSoon = () => {
     if (this.props.project.status !== 'comingsoon') {
       return (
@@ -29,8 +49,10 @@ class Project extends Component {
         onMouseEnter={this.onMouseEnter}
         onMouseLeave={this.onMouseLeave}
         className={'title'}
-        href={this.props.project.href}>
-        <h3 style={{color:this.state.hoverColor, borderColor:this.state.hoverColor}}>{this.props.project.title}</h3>
+        href={this.props.project.href}
+        target={"_blank"}
+        style={{color:this.state.hoverColor}}>
+        <h3>{this.props.project.title}</h3>
       </a>
       )
     } else {
@@ -38,8 +60,10 @@ class Project extends Component {
         <div
           onMouseEnter={this.onMouseEnter}
           onMouseLeave={this.onMouseLeave}
-          className={'title'}>
-          <h3 style={{color:this.state.hoverColor, borderColor:this.state.hoverColor}}>{`${this.props.project.title} (coming soon)`}</h3>
+          className={'title'}
+          style={{color:this.state.hoverColor}}>
+            <h3 >{`${this.props.project.title}`}</h3>
+            <h3> {'(coming soon)'}</h3>
         </div>
       )
     }
@@ -47,13 +71,12 @@ class Project extends Component {
 
   render() {
     return (
-      <li
-        key={`project${this.props.project.key}`}>
+      <li className={'projectListItem'} key={`project${this.props.project.key}`}>
         <div style={{borderColor:this.state.hoverColor}} className={'oval'}>
           <div style={{webkitTextStrokeColor:this.state.hoverColor}} className={'num'}> {this.props.index < 9 ? `0${this.props.index + 1}` : this.props.index + 1} </div>
         </div>
         {this.handleComingSoon()}
-        <PhotoList project={this.props.project} />
+        {this.makePhotoList()}
       </li>
     );
   }
