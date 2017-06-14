@@ -44,17 +44,17 @@ class App extends Component {
   }
 
   render() {
-    let trayHeight = '400px'
-    let mainMarginTop = '0px'
-    // let trayHeight = 0;
-    // let mainMarginTop = '240px'
-    // if (this.state.infoOpen) {
-    //   trayHeight = '400px'
-    //   mainMarginTop = '50px'
-    // } else {
-    //   trayHeight = 0
-    //   mainMarginTop = '240px'
-    // }
+    // let trayHeight = '400px'
+    // let mainMarginTop = '0px'
+    let trayHeight = 0;
+    let mainMarginTop = '240px'
+    if (this.state.infoOpen) {
+      trayHeight = '400px'
+      mainMarginTop = '50px'
+    } else {
+      trayHeight = 0
+      mainMarginTop = '240px'
+    }
 
     return (
       <div className={'app'}>
