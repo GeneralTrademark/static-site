@@ -10,7 +10,7 @@ class App extends Component {
     this.state = {
       infoOpen: false,
       hoverColor: 'black',
-      infoOvalBackground: '#F2F2F2'
+      infoOvalBackground: 'rgba(255,255,255,0)'
     }
   }
 
@@ -27,13 +27,13 @@ class App extends Component {
     this.setState({
       infoOpen: !this.state.infoOpen,
       hoverColor: this.state.infoOpen ? 'black' : 'white',
-      infoOvalBackground: this.state.infoOpen ? '#F2F2F2' : '#005FB2',
+      infoOvalBackground: this.state.infoOpen ? 'rgba(255,255,255,0)' : 'rgba(255,255,255,0)',
     })
   }
 
   onMouseEnter = () => {
     this.setState({
-      hoverColor: this.state.infoOpen ? 'white' : '#005FB2',
+      hoverColor: this.state.infoOpen ? 'white' : 'red',
     })
   }
 
@@ -44,27 +44,27 @@ class App extends Component {
   }
 
   render() {
-    let trayHeight = 0;
-    let mainMarginTop = '240px'
-    if (this.state.infoOpen) {
-      trayHeight = '400px'
-      mainMarginTop = '50px'
-    } else {
-      trayHeight = 0
-      mainMarginTop = '240px'
-    }
+    let trayHeight = '400px'
+    let mainMarginTop = '0px'
+    // let trayHeight = 0;
+    // let mainMarginTop = '240px'
+    // if (this.state.infoOpen) {
+    //   trayHeight = '400px'
+    //   mainMarginTop = '50px'
+    // } else {
+    //   trayHeight = 0
+    //   mainMarginTop = '240px'
+    // }
 
     return (
       <div className={'app'}>
       <header style={{height: trayHeight}}>
-        <div className={'info'}>
+        <div className={'info'} style={{color: this.state.hoverColor}}>
           <h4> {metaData.address} </h4>
           <h4> {metaData.instagram} </h4>
           <h4> {metaData.email} </h4>
           </div>
-
-{        // <div className={'blurb'}><p> {metaData.blurb} </p></div>
-}      </header>
+        </header>
       <article>
         <li>
           <div

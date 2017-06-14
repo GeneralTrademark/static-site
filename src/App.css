@@ -5,7 +5,8 @@ header{
   display: flex;
   width: 100%;
   align-items: flex-end;
-  background-color: #005FB2;
+  background: -webkit-linear-gradient(red, white);
+  /*background-color: red;*/
   color: white;
   transition: 500ms;
   overflow: hidden;
@@ -25,6 +26,7 @@ article{
 article h1 {
   transition: 300ms;
   margin-right: 40px;
+  /*background-color: white;*/
 }
 
 article li {
@@ -78,7 +80,12 @@ h3{
 }
 
 li h3 {
+  margin-left: 30px;
   margin-right: 20px;
+  float: left;
+  letter-spacing:4px;
+  /*text-transform: uppercase;*/
+  /*font-weight: bold;*/
 }
 
 h4 {
@@ -114,7 +121,13 @@ a{
 
 a:hover{
   cursor: pointer;
+  /*cursor: url("./images/external.png"), -moz-zoom-in;*/
 }
+
+a[target="_blank"] {
+    cursor: ne-resize;
+}
+
 
 ul{
   list-style: none;
@@ -133,15 +146,17 @@ li{
 }
 
 .oval{
-  width: 160px;
-  height: 100px;
+  width: 100px;
+  height: 60px;
   display: block;
   background-color: transparent;
-  border: 1px solid black;
-  border-radius: 160px / 100px;
+  border: 1px solid rgba(0,0,0,.4);
+  border-radius: 100px / 60px;
 
   transition: 300ms;
   transform-origin: bottom;
+
+  float: left;
 }
 
 li:hover .oval {
@@ -154,7 +169,7 @@ li:hover .oval {
   -webkit-text-fill-color: transparent; /* Will override color (regardless of order) */
   -webkit-text-stroke-width: 1.5px;
   margin-right: 20px;
-  font-size: 80px;
+  font-size: 40px;
   width: 160px;
   text-align: center;
   margin-top: 8px;
@@ -202,12 +217,21 @@ header img{
 
 .title{
   word-wrap: break-word;
-  margin-left: 40px;
+  /*margin-left: 40px;*/
 }
 
 .info{
-  margin-bottom: 20px;
+  margin-bottom: 200px;
+  padding-left: 150px;
   width: 100%;
-  display: flex;
-  justify-content: space-between;
+  color: rgba(0,0,0, .6);
+  font-family: 'Times New Roman';
+  /*display: flex;
+  justify-content: space-between;*/
+}
+
+.info h4{
+  font-family: 'Times New Roman';
+  /*display: flex;
+  justify-content: space-between;*/
 }

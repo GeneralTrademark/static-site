@@ -5,7 +5,7 @@ class Project extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      hoverColor: 'black',
+      hoverColor: 'rgba(0,0,0,0.8)',
       galleryOpen: false,
     }
   }
@@ -18,7 +18,7 @@ class Project extends Component {
 
   onMouseLeave = () => {
     this.setState({
-      hoverColor: 'black'
+      hoverColor: 'rgba(0,0,0,0.8)'
     })
   }
 
@@ -52,16 +52,22 @@ class Project extends Component {
         href={this.props.project.href}
         target={"_blank"}
         style={{color:this.state.hoverColor}}>
+        <div style={{borderColor:this.state.hoverColor}} className={'oval'}>
+          <div style={{webkitTextStrokeColor:this.state.hoverColor}} className={'num'}> {this.props.index < 9 ? `0${this.props.index + 1}` : this.props.index + 1} </div>
+        </div>
         <h3>{this.props.project.title}</h3>
       </a>
       )
     } else {
       return (
         <div
-          onMouseEnter={this.onMouseEnter}
-          onMouseLeave={this.onMouseLeave}
+          // onMouseEnter={this.onMouseEnter}
+          // onMouseLeave={this.onMouseLeave}
           className={'title'}
           style={{color:this.state.hoverColor}}>
+          <div style={{borderColor:this.state.hoverColor}} className={'oval'}>
+            <div style={{webkitTextStrokeColor:this.state.hoverColor}} className={'num'}> {this.props.index < 9 ? `0${this.props.index + 1}` : this.props.index + 1} </div>
+          </div>
             <h3 >{`${this.props.project.title}`}</h3>
             <h3> {'(coming soon)'}</h3>
         </div>
@@ -72,9 +78,6 @@ class Project extends Component {
   render() {
     return (
       <li className={'projectListItem'} key={`project${this.props.project.key}`}>
-        <div style={{borderColor:this.state.hoverColor}} className={'oval'}>
-          <div style={{webkitTextStrokeColor:this.state.hoverColor}} className={'num'}> {this.props.index < 9 ? `0${this.props.index + 1}` : this.props.index + 1} </div>
-        </div>
         {this.handleComingSoon()}
         {this.makePhotoList()}
       </li>
