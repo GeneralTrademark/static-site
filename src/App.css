@@ -109,11 +109,11 @@ p{
 
 a{
   text-decoration: none;
-  /*color: black;*/
+  color: black;
 }
 
 a:hover{
-  cursor: pointer;
+  cursor: ne-resize	;
 }
 
 ul{
@@ -173,7 +173,7 @@ li:hover .oval {
 }
 
 .infoOval:hover{
-  cursor: pointer;
+  cursor: s-resize;
 }
 
 li img{
@@ -198,6 +198,7 @@ header img{
   padding-top: 20px;
   font-family: 'LiSong Pro';
   padding-bottom: 2px;
+  color: #f2f2f2;
   width: 100%;
   position: absolute;
   margin: 0 auto;
@@ -207,30 +208,14 @@ header img{
   animation: marquee 50s linear infinite;
 }
 
-.marquee.light{
-  color: #f2f2f2;
-}
-
-.marquee.light a{
-  color: #f2f2f2;
-}
-
-.marquee.dark{
-  color:  #f2f2f2;
-}
-
-.marquee.dark a{
-  color:  #f2f2f2;
-}
-
 .marquee:hover {
     animation-play-state: paused
 }
 
-/*.marquee a{
+.marquee a{
   color: #f2f2f2;
   text-decoration: underline;
-}*/
+}
 
 .arenatv:hover{
   color: #17AC10;

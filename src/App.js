@@ -34,7 +34,7 @@ class App extends Component {
 
   onMouseEnter = () => {
     this.setState({
-      hoverColor: this.state.infoOpen ? 'white' : 'red',
+      hoverColor: this.state.infoOpen ? 'white' : 'blue',
     })
   }
 
@@ -48,17 +48,14 @@ class App extends Component {
     let trayHeight = '20px';
     let mainMarginTop = '260px'
     let trayMargin = '0px'
-    let marqueeStyle = 'light'
     if (this.state.infoOpen) {
       trayHeight = '900px'
       trayMargin = '-620px'
       mainMarginTop = '10px'
-      marqueeStyle = 'dark'
     } else {
       trayHeight = '0px'
       mainMarginTop = '260px'
       trayMargin = '0px'
-      marqueeStyle = 'light'
     }
 
     let insta = <a href="http://www.instagram.com/generaltrademark" target={"_blank"}>@generaltrademark</a>
@@ -80,15 +77,11 @@ class App extends Component {
             <div style={{WebkitTextStrokeColor:this.state.hoverColor}} className={'num'}> {'i'} </div>
           </div>
         </li>
-        <div className={'marquee' + ' ' + marqueeStyle}>
+        <div className={'marquee'}>
           {marqueeText}{marqueeText}{marqueeText}{marqueeText}{marqueeText}{marqueeText}{marqueeText}{marqueeText}{marqueeText}{marqueeText}{marqueeText}{marqueeText}{marqueeText}
         </div>
       </article>
       <header style={{height: trayHeight, marginTop:trayMargin}} >
-        {/* <div className={'marquee'} style={{height:marqueeHeight}}>
-          {marqueeText}{marqueeText}{marqueeText}{marqueeText}{marqueeText}{marqueeText}{marqueeText}{marqueeText}{marqueeText}{marqueeText}{marqueeText}{marqueeText}{marqueeText}
-          {marqueeText}{marqueeText}{marqueeText}{marqueeText}{marqueeText}{marqueeText}{marqueeText}{marqueeText}{marqueeText}{marqueeText}{marqueeText}{marqueeText}{marqueeText}
-        </div> */}
       </header>
       <main style={{marginTop: mainMarginTop}}>
         <ul>
