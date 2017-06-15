@@ -5,7 +5,7 @@ class Project extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      hoverColor: 'rgba(0,0,0,0.8)',
+      hoverColor: 'rgba(0,0,0,0.75)',
       galleryOpen: false,
     }
   }
@@ -18,7 +18,7 @@ class Project extends Component {
 
   onMouseLeave = () => {
     this.setState({
-      hoverColor: 'rgba(0,0,0,0.8)'
+      hoverColor: 'rgba(0,0,0,0.75)'
     })
   }
 

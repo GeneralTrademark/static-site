@@ -39,6 +39,12 @@
   font-weight: 100;
 }
 
+@font-face {
+  font-family: 'lisong';
+  src:  url('fonts/lisong.ttf') format('truetype');
+  font-weight: 100;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -46,5 +52,5 @@
 html, body {
   margin:0;
   padding: 0;
-  /*background-color: #F2F2F2;*/
+  background-color: #F2F2F2;
 }

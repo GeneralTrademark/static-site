@@ -3,6 +3,7 @@ import Project from './Project'
 import './App.css'
 import metaData from './meta.json'
 import projectData from './projects.json'
+import Marquee from 'react-marquee';
 
 class App extends Component {
   constructor(props) {
@@ -10,7 +11,7 @@ class App extends Component {
     this.state = {
       infoOpen: false,
       hoverColor: 'black',
-      infoOvalBackground: 'rgba(255,255,255,0)'
+      infoOvalBackground: 'rgba(255,255,255,0)',
     }
   }
 
@@ -44,40 +45,51 @@ class App extends Component {
   }
 
   render() {
-    // let trayHeight = '400px'
-    // let mainMarginTop = '0px'
-    let trayHeight = 0;
-    let mainMarginTop = '240px'
+    let trayHeight = '20px';
+    let mainMarginTop = '260px'
+    let trayMargin = '0px'
+    let marqueeStyle = 'light'
     if (this.state.infoOpen) {
-      trayHeight = '400px'
-      mainMarginTop = '50px'
+      trayHeight = '900px'
+      trayMargin = '-620px'
+      mainMarginTop = '10px'
+      marqueeStyle = 'dark'
     } else {
-      trayHeight = 0
-      mainMarginTop = '240px'
+      trayHeight = '0px'
+      mainMarginTop = '260px'
+      trayMargin = '0px'
+      marqueeStyle = 'light'
     }
+
+    let insta = <a href="http://www.instagram.com/generaltrademark" target={"_blank"}>@generaltrademark</a>
+    let address = <a href="https://goo.gl/maps/GUHquzaLzc82" target={"_blank"}>84 Withers St. Brooklyn NY 11211</a>
+    let email = <a href="mailto:info@generaltrademark.com?Subject=hello" target={"_blank"}>info@generaltrademark.com</a>
+    let who = 'Design R&D services. Come visit us (seriously), we are probably at studio and would love to meet you. You should look at Learning Gardens and Imbedded forms. Thanks for visiting our site!'
+
+    let marqueeText = [email, ' // ', insta, ' // ', address, ' // ',]
+    marqueeText.concat('')
 
     return (
       <div className={'app'}>
-      <header style={{height: trayHeight}}>
-        <div className={'info'} style={{color: this.state.hoverColor}}>
-          <h4> {metaData.address} </h4>
-          <h4> {metaData.instagram} </h4>
-          <h4> {metaData.email} </h4>
-          </div>
-        </header>
       <article>
-        <li>
+        <h1 style={{WebkitTextStrokeColor:this.state.hoverColor}}>{'gt'}</h1>
+        <li onClick={()=>this.handleOpenInfo()} onMouseEnter={()=>this.onMouseEnter()} onMouseLeave={()=>this.onMouseLeave()}>
           <div
             className={'oval infoOval'}
-            onClick={()=>this.handleOpenInfo()}
-            style={{borderColor:this.state.hoverColor, backgroundColor:this.state.infoOvalBackground}}
-            onMouseEnter={()=>this.onMouseEnter()}
-            onMouseLeave={()=>this.onMouseLeave()}>
+            style={{borderColor:this.state.hoverColor, backgroundColor:this.state.infoOvalBackground}}>
             <div style={{WebkitTextStrokeColor:this.state.hoverColor}} className={'num'}> {'i'} </div>
           </div>
         </li>
-        <h1 style={{WebkitTextStrokeColor:this.state.hoverColor}}>{'gt'}</h1>
+        <div className={'marquee' + ' ' + marqueeStyle}>
+          {marqueeText}{marqueeText}{marqueeText}{marqueeText}{marqueeText}{marqueeText}{marqueeText}{marqueeText}{marqueeText}{marqueeText}{marqueeText}{marqueeText}{marqueeText}
+        </div>
       </article>
+      <header style={{height: trayHeight, marginTop:trayMargin}} >
+        {/* <div className={'marquee'} style={{height:marqueeHeight}}>
+          {marqueeText}{marqueeText}{marqueeText}{marqueeText}{marqueeText}{marqueeText}{marqueeText}{marqueeText}{marqueeText}{marqueeText}{marqueeText}{marqueeText}{marqueeText}
+          {marqueeText}{marqueeText}{marqueeText}{marqueeText}{marqueeText}{marqueeText}{marqueeText}{marqueeText}{marqueeText}{marqueeText}{marqueeText}{marqueeText}{marqueeText}
+        </div> */}
+      </header>
       <main style={{marginTop: mainMarginTop}}>
         <ul>
           {this.makeProjectList()}
